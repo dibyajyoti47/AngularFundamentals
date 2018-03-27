@@ -7,8 +7,8 @@ import {Component} from '@angular/core';
     <hr/>
     <event-thumbnail 
         [event]="event1"
-        (eventClick)="eventClickHandler($event)"    
-        ></event-thumbnail>
+        (eventClick)="eventClickHandler($event)">
+        </event-thumbnail>
    </div>`
 })
 export class EventsListComponent {
