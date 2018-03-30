@@ -11,23 +11,26 @@ import { ToastrService } from './common/ToastrService';
       <div class="col-md-5" *ngFor="let event of events">
         <event-thumbnail 
         [event]="event"
-        (eventClick)="eventClickHandler($event)"
-        (click)="handleClickForToastr(event.name)">
+        (eventClick)="eventClickHandler($event)">
+        
         </event-thumbnail>         
       </div>  
     </div>  
    </div>`
   //  <event-thumbnail  [event]="event1">
   //       </event-thumbnail>
+  //(click)="handleClickForToastr(event.name)">
 })
 export class EventsListComponent implements OnInit{
-    events : any[]
+    events : any;
     
     constructor(private eventService : EventService , private toastrService : ToastrService){     
     }
 
     ngOnInit () {
-      this.events = this.eventService.getEvents();
+      this.eventService.getEvents().subscribe((events) => {
+        this.events = events;
+      });
     }
 
     event1 = {

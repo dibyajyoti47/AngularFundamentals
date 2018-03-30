@@ -10,6 +10,10 @@ import {ToastrService} from './events/common/ToastrService';
 import {EventDetailsComponent} from './events/event-details/event-details.component';
 import { RouterModule } from '@angular/router';
 import {appRoutes} from './routes';
+import { CreateEventComponent } from './events/shared/create-event.component';
+import { Error404Component } from './error/404.component';
+import { EventRouteActivator } from './events/event-details/event-route-activator.service';
+
 
 @NgModule({
     imports: [BrowserModule,
@@ -19,11 +23,26 @@ import {appRoutes} from './routes';
                    EventsListComponent,
                    EventThumbnailCOmponent,
                    NavBarComponent,
-                   EventDetailsComponent
+                   EventDetailsComponent,
+                   CreateEventComponent,
+                   Error404Component
                 ],
     bootstrap: [EventsAppComponent],
-    providers: [EventService, ToastrService]
+    providers: [
+                EventService, 
+                ToastrService, 
+                EventRouteActivator,
+                {provide:'canDeactivateCreateEvent',useValue:checkDirtyState}
+            ]
 })
 export class AppModule {
 
+}
+function checkDirtyState (component : CreateEventComponent){
+    if(component.isDirty){
+        return window.confirm('really ? ');
+    }else{
+        return true;
+    }
+    
 }
