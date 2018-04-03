@@ -5,7 +5,10 @@ import {Subject} from 'rxjs/RX';
 export class EventService {
     getEvents(){
       let subject = new Subject();
-      setTimeout(()=>{subject.next(EVENTS); subject.complete()},100); 
+      setTimeout(()=>{
+                      subject.next(EVENTS); 
+                      subject.complete()
+                      },100); 
         return subject;
     }    
     getEvent(id: number){
