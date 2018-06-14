@@ -20,7 +20,8 @@ import { IEvent } from "./shared/event.model";
         <span class="pad-left"></span>
         <span>{{event.location.city}},{{event.location.country}}</span>
     </div>
-    <button class ="btn btn-primary" (click)="handleClickMe()">Click Me!</button>
+    <button class ="btn btn-primary" >Click Me!</button>
+    
  </div>`,
  
  //<div [class.bold]="event?.time === '8:00 am'"  [class.green]="event?.time === '8:00 am'" [ngSwitch]="event?.time">Time : {{event.time}}    
@@ -41,17 +42,17 @@ import { IEvent } from "./shared/event.model";
 })
 export class EventThumbnailCOmponent {
     @Input() event : IEvent
-    @Output() eventClick = new EventEmitter();
+ //   @Output() eventClick = new EventEmitter();
     
-    someProperty : any = {prop : "SomeValue"};
+    // someProperty : any = {prop : "SomeValue"};
 
-    handleClickMe(){
-        this.eventClick.emit("foo");
-    }
+    // handleClickMe(){
+    //     this.eventClick.emit("foo");
+    // }
     
-    logFoo (){
-        console.log("hey there..");
-    }
+    // logFoo (){
+    //     console.log("hey there..");
+    // }
     getClass(){
         if(this.event.time && this.event.time === '8:00 am'){
             return ['green : true' , 'bold : true'];
