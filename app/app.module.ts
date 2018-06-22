@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-
 import {EventsAppComponent} from './events-app.component';
 import {EventsListComponent} from './events/events-list.component';
 import { EventThumbnailCOmponent } from './events/event-thumbnail.component';
@@ -24,6 +23,8 @@ import { JQ_TOKEN } from './events/common/jQuery.service';
 import { SimpleModalComponent } from './events/common/simpleModal.component';
 import { ModalTriggerDirective } from './events/common/modalTrigger.directive';
 import { UpvoteComponent } from './events/event-details/upvote.component';
+import { VoterService } from './events/event-details/voter.service';
+import { LocationValidator } from './events/event-details/locationValidator.directive';
 
 let toastr : Toastr = window['toastr'];
 let jQuery  = window['$'];
@@ -47,7 +48,8 @@ let jQuery  = window['$'];
                    DurationPipe,
                    SimpleModalComponent,
                    ModalTriggerDirective,
-                   UpvoteComponent
+                   UpvoteComponent,
+                   LocationValidator
                 ],
     bootstrap: [EventsAppComponent],
     providers: [
@@ -57,7 +59,8 @@ let jQuery  = window['$'];
                 AuthService,
                 {provide:'canDeactivateCreateEvent',useValue:checkDirtyState},
                 {provide:TOASTR_TOKEN,useValue:toastr},
-                {provide:JQ_TOKEN,useValue:jQuery}
+                {provide:JQ_TOKEN,useValue:jQuery},
+                VoterService
             ]
 })
 
