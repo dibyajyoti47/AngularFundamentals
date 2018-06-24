@@ -25,6 +25,7 @@ import { ModalTriggerDirective } from './events/common/modalTrigger.directive';
 import { UpvoteComponent } from './events/event-details/upvote.component';
 import { VoterService } from './events/event-details/voter.service';
 import { LocationValidator } from './events/event-details/locationValidator.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 let toastr : Toastr = window['toastr'];
 let jQuery  = window['$'];
@@ -33,6 +34,7 @@ let jQuery  = window['$'];
     imports: [BrowserModule,
               FormsModule,
               ReactiveFormsModule,
+              HttpClientModule,
               RouterModule.forRoot(appRoutes)  
         ],
     declarations: [EventsAppComponent,
