@@ -17,9 +17,9 @@ import { IEvent } from './shared/event.model';
       </div>  
     </div>  
    </div>`
-  //  <event-thumbnail  [event]="event1">
-  //       </event-thumbnail>
-  //(click)="handleClickForToastr(event.name)">
+  /* <event-thumbnail  [event]="event1">
+        </event-thumbnail>
+  (click)="handleClickForToastr(event.name)"> */
 })
 export class EventsListComponent implements OnInit{
     events : IEvent[];
@@ -33,24 +33,24 @@ export class EventsListComponent implements OnInit{
       this.events = this.activatedRoute.snapshot.data['events'];
     }
 
-    // event1 = {
-    //     id : 1,
-    //     name: 'Angular Connect',
-    //     date: '9/26/2036',
-    //     time: '10:00 am',
-    //     price:'299.99',
-    //     imageUrl: 'app/assets/images/angularconnect-shield.png',
-    //     location : {
-    //         address: 'Bellandur',
-    //         city : 'Bangalore',
-    //         country : 'India'
-    //     }
-    // };
-    // eventClickHandler(data){
-    //     alert("received "+data);
-    // }
-    // handleClickForToastr(eventName){
-    //   this.toastrService.error(eventName, 'sampleTitle');
-    // }
+  /*  event1 = {
+        id : 1,
+        name: 'Angular Connect',
+        date: '9/26/2036',
+        time: '10:00 am',
+        price:'299.99',
+        imageUrl: 'app/assets/images/angularconnect-shield.png',
+        location : {
+            address: 'Bellandur',
+            city : 'Bangalore',
+            country : 'India'
+        }
+    };
+    eventClickHandler(data){
+        alert("received "+data);
+    }
+    handleClickForToastr(eventName){
+      this.toastrService.error(eventName, 'sampleTitle');
+    } */
     
 }
