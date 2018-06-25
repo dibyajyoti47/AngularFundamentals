@@ -26,6 +26,7 @@ import { UpvoteComponent } from './events/event-details/upvote.component';
 import { VoterService } from './events/event-details/voter.service';
 import { LocationValidator } from './events/event-details/locationValidator.directive';
 import { HttpClientModule } from '@angular/common/http';
+import { EventResolver } from './events/event-resolver.service';
 
 let toastr : Toastr = window['toastr'];
 let jQuery  = window['$'];
@@ -56,6 +57,7 @@ let jQuery  = window['$'];
     bootstrap: [EventsAppComponent],
     providers: [
                 EventListResolver,
+                EventResolver,
                 EventService,
                 EventRouteActivator,
                 AuthService,
